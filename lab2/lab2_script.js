@@ -109,14 +109,21 @@ switch(gender){
         console.log(`ERROR: Unable to read the selected gender`)
 }
 
-console.log(`\n---- EXERCISE 1 ----`)
-let user_input1 = prompt(`Enter Value : `)
 
-if(user_input1) {
-    console.log(`${user_input} is a STRING.`)
-}
-else {
-    console.log(`${user_input} is a NUMBER.`)
+console.log(`\n---- EXERCISE 1 ----`);
+let user_input1 = prompt(`Enter Value : `);
+
+if (isNaN(user_input1)) {
+    console.log(`${user_input1} is a STRING.`);
+} else {
+    user_input1 = parseInt(user_input1);
+    if (user_input1 < 0) {
+        console.log(`${user_input1} is a negative number.`);
+    } else if (user_input1 > 0) {
+        console.log(`${user_input1} is a positive number.`);
+    } else if (user_input1 === 0) {
+        console.log(`${user_input1} is zero.`);
+    }
 }
 
 
@@ -126,10 +133,10 @@ let colors = ["red", "green", "blue", "yellow", "purple"]
 let user_color = prompt(`Enter a color: `).toLowerCase()
 let index_color = colors.indexOf(user_color)
 
-switch(user_color) {
-    case index_color >= 0:
-        console.log(`${user_color} exists in the color list.`);
+switch (index_color) {
+    case -1:
+        console.log(`${user_color} does not exist in the list.`);
         break;
     default:
-        console.log(`${user_color} does not exist in the list.`);
+        console.log(`${user_color} exists in the color list.`);
 }
