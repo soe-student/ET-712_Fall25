@@ -97,7 +97,7 @@ let gender = prompt('Enter gender: ')
 
 switch(gender){
     case "Female": case "FEMALE": case "F": case "f": case "female":
-        console.log(`Selectede gender = FEMALE`)
+        console.log(`Selected gender = FEMALE`)
         break
     case "Male":case "MALE": case "M": case "m": case "male":
         console.log(`Selected gender = MALE`)
