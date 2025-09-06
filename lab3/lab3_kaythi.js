@@ -124,7 +124,6 @@ while(true){
             break
         
         case 4:
-            console.log("Thank you for using QCC bank with us, Have a great day!")
             break
         default:
             console.log("Thank you for using QCC bank with us, Have a great day!")
@@ -136,27 +135,43 @@ while(true){
 
 
 console.log(`--------EXERCISE A--------`)
+let num = [-3,10,0,8,-9,5,-2,8,6,-1]
+//print sum of all positive numbers in the array
+let sum_positive = 0
+let sum_negative = 0
+for (let i = 0; i < num.length; i++){
+    if (num[i] > 0){
+        sum_positive += num[i]
+    }
+    else{
+        sum_negative += num[i]
+    }
+}
+console.log(`Sum of all positive numbers in the array is: ${sum_positive}`)
+console.log(`Sum of all negative numbers in the array is: ${sum_negative}`)
 
 
 console.log(`---------EXERCISE B---------`)
 
 let pin = 1234
 let attempt = 3
-while(true){
+while(attempt > 0){
     // collect a 4-digit pin from the user
-    let user_pin = parseInt(prompt("Enter your 4-digit pin number: "))
+    let user_pin = parseInt(prompt("Enter your 4 digit pin number: "))
     // pin validation
-    if (user_pin < 1000 || user_pin > 9999){
-        user_pin = parseInt(prompt("ERROR: Please enter a number: "))
-        attempt--;
-    }
-    else{
+    if (user_pin == pin){
         console.log("Welcome to your account")
         break
     }
-    // attempt reaches to zero
-    if (attempt === 0){
-        console.log("YOUR ACCOUNT IS LOCKED")
-        break
+    else {
+        attempt--;
+        if (attempt == 0){
+            console.log("YOUR ACCOUNT IS LOCKED")
+            break
+        }
+        else {
+            console.log("Wrong pin, Try again")
+        }
     }
+
 }
