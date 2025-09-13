@@ -106,4 +106,40 @@ function yell(msg=""){
 }
 
 
+// EXERCISE 1
+console.log("EXERCISE 1")
+const myCalculator = {
+    // properties
+    message: "Hello from myCalculator",
+    side: 2,
+    // method to calculate area_square
+    area_square: function(side){
+        return Math.pow(side, 2);
+    },
+    // method to calculate volume_cube
+    volume_cube: function(side){
+        return Math.pow(side, 3);
+    }
+}
+
+
+// EXERCISE 2
+console.log("EXERCISE 2")
+const obj = {
+    prop : "Hello from obj",
+    readProperty(propName){
+        try{
+            console.log(this.prop)
+        }
+        catch(error){
+            console.log(error)
+        }
+        finally{
+            console.log("End of program")
+        }
+    }
+    
+}
+
+
 
