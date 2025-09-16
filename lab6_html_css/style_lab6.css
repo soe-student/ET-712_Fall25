@@ -1,0 +1,75 @@
+*{box-sizing: border-box;margin: 0%;}
+html{scroll-behavior: smooth;}
+img{width: 100%; display:block;}
+body{
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    line-height: 1.6;
+    background-color: lightgrey;
+}
+
+/* Header Section */
+header{
+    background-color: lightblue;
+}
+.top_header{
+    background-color: lightgreen 1px;
+    display: flex;
+    justify-content: center;
+}
+.top_header div{
+    width: 40%;
+    padding: 1%;
+
+}
+.nav_header{
+    display: flex;
+    flex-wrap: wrap;
+}
+.nav_header a{
+    display: inline-block;
+    width: 25%;
+    color: whitesmoke;
+    text-decoration: none;
+    text-align: center;
+    margin-top: 5%;
+    border-right: solid white 2px;
+}
+.nav_header a:hover{
+    color: orange;
+}
+.nav_bottom_header{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 60%;
+    margin: auto;
+}
+.nav_bottom_header a{
+    display: inline-block;
+    width: 20%;
+    color: darkblue;
+    text-decoration: none;
+    text-align: center;
+    margin-top: 2%;
+    border-right: solid darkblue 2px;
+}
+.nav_bottom_header a:hover{
+    text-decoration: underline;
+    font-size: 1.05em;
+}
+
+/* Main Section 
+    Introduction Image
+*/
+.intro_img{
+    position: relative;
+}
+.intro_p{
+    position: absolute;
+    top: 10%;
+    right: 5%;
+    color: white;
+    font-size: 3em;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 1%;
+}
