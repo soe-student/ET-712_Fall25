@@ -48,3 +48,16 @@
     font-size: 3rem;
     padding: 3rem;
 }
+.username_paragraph {
+    color: red;
+    font-weight: bold;
+    font-size: 0.9rem;
+    font-style: italic;
+}
+/* EXercise */
+div.divs2, div.divs3{
+    width: 100px;
+    height: 100px;
+    background-color: aqua;
+    margin: 20px;
+}
