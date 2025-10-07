@@ -1,0 +1,77 @@
+*{box-sizing:border-box;}
+img{width:100%;display: block;}
+
+.btnpressme{
+    padding: 0.5em 2em;
+    background-color: rgb(50,50,50);
+    color: white;
+    border-radius: 8px;
+}
+.btnactive{
+    background-color:crimson;
+    box-shadow: 0px 0px 3px 1px gray;
+}
+#list li{
+    width: 200px;
+    padding: 1em 2em;
+    border: lightblue 2px solid;
+    list-style: none;
+    display: flex;
+}
+#list li span{
+    display: inline-block;
+    margin-left: auto;
+    width: 20%;
+}
+#list li:hover{
+    background-color: yellow;
+    cursor: pointer;
+}
+/* window event */
+#content{
+    width: 2000px;
+    background-color: lightblue;
+    padding: 20px;
+}
+.btnscrollby{
+    margin-top: 20px;
+}
+
+/* photo gallery scrolling */
+.gallery-container, .maincontainer{
+    width: 1000px;
+    margin: auto;
+}
+.maincontainer{
+    position: relative;
+    z-index: 0;
+}
+.gallery-container{
+    overflow-x: scroll; /* horizontal scroll */
+    position: relative;
+    z-index: 1;
+    white-space: nowrap; /* keep images in one same line */
+}
+.gallery-image{
+    display: inline-block;
+    width: 50%;
+    height: 600px;
+}
+.btnright, .btnleft{
+    position: absolute;
+    top: 40%;
+    z-index: 2;
+    font-size: 3em;
+    background-color: rgba(255,255,255,0.5);
+    border: none;
+}
+.btnright:hover, .btnleft:hover{
+    color: crimson;
+    cursor: pointer;
+}
+.btnright{
+    right: 0%;
+}
+.btnleft{
+    left: 0%;
+}
