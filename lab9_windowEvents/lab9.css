@@ -1,0 +1,96 @@
+*{box-sizing: border-box;}
+img{width: 100%; display:block ;}
+
+.displaypexels{
+    background-color: rgba(150, 150, 150, 0.6);
+    width: 200px;
+    padding: 1em;
+    font-size: 1.5em;
+    position: fixed;
+    top: 0%;
+    right: 0%;
+}
+.images_container{
+    margin: auto;
+    width: 90%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    background-color: aliceblue;
+    gap: 3em;
+    padding: 3em;
+}
+.img_gallery{
+    width: 500px;
+}
+
+/* to the top*/
+.toTop{
+    background-color: rgba(150, 150, 150, 0.8);
+    width: 60px;
+    height: 60px;
+    text-align: center;
+    padding: 1em;
+    border-radius: 50%;
+    position: fixed;
+    bottom: 5%;
+    right: 5%;
+}
+.toTop a{
+    text-decoration: none;
+    color: red;
+}
+/* modal window*/
+
+.openmodal{
+    width: 300px;
+    overflow: hidden;
+    border-radius: 12px;
+    cursor: pointer;
+}
+.openmodal:hover{
+    opacity: 0.8;
+}
+
+.modal_overlay{
+    position: fixed;
+    top: 0%;
+    left: 0%;
+    bottom: 0%;
+    right: 0%;
+    background-color: rgba(50,50,50,0.8);
+    display: none;
+}
+.modal_content{
+    width: 800px;
+    height: 500px;
+    background-color: whitesmoke;
+    margin: 100px auto;
+    position: relative;
+}
+.close_button{
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 40px;
+    color: Blue;
+    cursor: pointer;
+}
+.close_button:hover{
+    color: red;
+}
+.modal h2{
+    text-align: center;
+    padding-top: 1em;
+    color: blue;
+}
+.modal_info{
+    text-align: center;
+    padding: 1em;
+    font-size: 1em;
+}
+.modal_image, .modal_p{
+    width: 50%;
+    margin: auto;
+
+}
