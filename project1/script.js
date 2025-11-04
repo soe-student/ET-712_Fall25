@@ -74,52 +74,47 @@ const animalData = {
     cat: {
         emoji: '🐱',
         name: 'Cat',
-        image: 'https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?w=400&h=300&fit=crop'
+        image: 'images/cat.jpg'
     },
     dog: {
         emoji: '🐶',
         name: 'Dog',
-        image: 'https://images.unsplash.com/photo-1543466835-00a7907e9de1?w=400&h=300&fit=crop'
+        image: 'images/dog.jpg'
     },
     elephant: {
         emoji: '🐘',
         name: 'Elephant',
-        image: 'https://images.unsplash.com/photo-1564760055775-d63b17a55c44?w=400&h=300&fit=crop'
+        image: 'images/elephant.jpg'
     },
     lion: {
         emoji: '🦁',
         name: 'Lion',
-        image: 'https://images.unsplash.com/photo-1614027164847-1b28cfe1df60?w=400&h=300&fit=crop'
+        image: 'images/lion.jpg'
     },
     monkey: {
         emoji: '🐵',
         name: 'Monkey',
-        image: 'https://images.unsplash.com/photo-1540573133985-87b6da6d54a9?w=400&h=300&fit=crop'
+        image: 'images/monkey.jpg'
     },
     rabbit: {
         emoji: '🐰',
         name: 'Rabbit',
-        image: 'https://images.unsplash.com/photo-1585110396000-c9ffd4e4b308?w=400&h=300&fit=crop'
+        image: 'images/rabbit.jpg'
     },
     bear: {
         emoji: '🐻',
         name: 'Bear',
-        image: 'https://images.unsplash.com/photo-1589656966895-2f33e7653819?w=400&h=300&fit=crop'
-    },
-    frog: {
-        emoji: '🐸',
-        name: 'Frog',
-        image: 'https://images.unsplash.com/photo-1503582805777-e42c9edbea4b?w=400&h=300&fit=crop'
+        image: 'images/bear.jpg'
     },
     kangaroo: {
         emoji: '🦘',
         name: 'Kangaroo',
-        image: 'https://images.unsplash.com/photo-1622535906181-39b05f055e2e?w=400&h=300&fit=crop'
+        image: 'images/kangaroo.jpg'
     },
     wolf: {
         emoji: '🐺',
         name: 'Wolf',
-        image: 'https://images.unsplash.com/photo-1614164185128-e4ec99c436d7?w=400&h=300&fit=crop'
+        image: 'images/wolf.jpg'
     }
 };
 
