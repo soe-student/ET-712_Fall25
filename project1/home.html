@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pre-K Learning Adventure</title>
+    <link rel="stylesheet" href="home.css">
+</head>
+<body>
+    <!-- Scroll Progress Bar -->
+    <div class="scroll-progress" id="scrollProgress"></div>
+
+    <header>
+        <h1>🌟 Pre-K Learning Adventure 🌟</h1>
+        <p>Let's Learn and Have Fun!</p>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="#" onclick="showSection('welcome')">🏠 Home</a></li>
+            <li><a href="#" onclick="showSection('colors')">🎨 Colors</a></li>
+            <li><a href="#" onclick="showSection('numbers')">🔢 Numbers</a></li>
+            <li><a href="#" onclick="showSection('animals')">🐾 Animals</a></li>
+            <li><a href="#" onclick="showSection('fruits')">🍉 Fruits</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <section id="welcome" class="active">
+            <h2>Welcome!</h2>
+            <div class="welcome-emoji">🎈🎉🎊</div>
+            <p>Hi there! Click the buttons above to explore colors, numbers, animals, and fruits!</p>
+            <p>Tap or click anything to learn more. Let's start!</p>
+            
+            <!-- Slideshow -->
+            <div class="slideshow-container">
+                <div class="slide active-slide">
+                    <h3>🎨 Colors</h3>
+                    <div class="slide-emoji">🌈</div>
+                    <p>Learn about beautiful colors!</p>
+                </div>
+                <div class="slide">
+                    <h3>🔢 Numbers</h3>
+                    <div class="slide-emoji">🔢</div>
+                    <p>Count and do math with us!</p>
+                </div>
+                <div class="slide">
+                    <h3>🐾 Animals</h3>
+                    <div class="slide-emoji">🦁</div>
+                    <p>Meet amazing animals!</p>
+                </div>
+                <div class="slide">
+                    <h3>🍉 Fruits</h3>
+                    <div class="slide-emoji">🍎</div>
+                    <p>Discover delicious fruits!</p>
+                </div>
+            </div>
+            
+            <div class="welcome-emoji">🚀📚✨</div>
+            <div class="scroll-indicator">👇 Scroll down to see the progress bar! 👇</div>
+        </section>
+
+        <section id="colors">
+            <h2>Let's Learn Colors! 🎨</h2>
+            <div class="grid-container">
+                <div class="grid-item color-item" style="background-color: #ff6b6b;" onclick="toggleRound(this, 'Red')">
+                    <p>Red</p>
+                </div>
+                <div class="grid-item color-item" style="background-color: #4ecdc4;" onclick="toggleRound(this, 'Blue')">
+                    <p>Blue</p>
+                </div>
+                <div class="grid-item color-item" style="background-color: #ffe66d;" onclick="toggleRound(this, 'Yellow')">
+                    <p>Yellow</p>
+                </div>
+                <div class="grid-item color-item" style="background-color: #95e1d3;" onclick="toggleRound(this, 'Green')">
+                    <p>Green</p>
+                </div>
+                <div class="grid-item color-item" style="background-color: #ffa07a;" onclick="toggleRound(this, 'Orange')">
+                    <p>Orange</p>
+                </div>
+                <div class="grid-item color-item" style="background-color: #da70d6;" onclick="toggleRound(this, 'Purple')">
+                    <p>Purple</p>
+                </div>
+                <div class="grid-item color-item" style="background-color: #ffb6c1;" onclick="toggleRound(this, 'Pink')">
+                    <p>Pink</p>
+                </div>
+                <div class="grid-item color-item" style="background-color: #8b4513;" onclick="toggleRound(this, 'Brown')">
+                    <p>Brown</p>
+                </div>
+                <div class="grid-item color-item" style="background-color: #000000;" onclick="toggleRound(this, 'Black')">
+                    <p>Black</p>
+                </div>
+                <div class="grid-item color-item" style="background-color: #ffffff;" onclick="toggleRound(this, 'White')">
+                    <p style="color: #333;">White</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="numbers">
+            <h2>Let's Count Numbers! 🔢</h2>
+            <div class="grid-container">
+                <div class="grid-item" onclick="promptMath(1)">
+                    <h3>1️⃣</h3>
+                    <p>One</p>
+                </div>
+                <div class="grid-item" onclick="promptMath(2)">
+                    <h3>2️⃣</h3>
+                    <p>Two</p>
+                </div>
+                <div class="grid-item" onclick="promptMath(3)">
+                    <h3>3️⃣</h3>
+                    <p>Three</p>
+                </div>
+                <div class="grid-item" onclick="promptMath(4)">
+                    <h3>4️⃣</h3>
+                    <p>Four</p>
+                </div>
+                <div class="grid-item" onclick="promptMath(5)">
+                    <h3>5️⃣</h3>
+                    <p>Five</p>
+                </div>
+                <div class="grid-item" onclick="promptMath(6)">
+                    <h3>6️⃣</h3>
+                    <p>Six</p>
+                </div>
+                <div class="grid-item" onclick="promptMath(7)">
+                    <h3>7️⃣</h3>
+                    <p>Seven</p>
+                </div>
+                <div class="grid-item" onclick="promptMath(8)">
+                    <h3>8️⃣</h3>
+                    <p>Eight</p>
+                </div>
+                <div class="grid-item" onclick="promptMath(9)">
+                    <h3>9️⃣</h3>
+                    <p>Nine</p>
+                </div>
+                <div class="grid-item" onclick="promptMath(10)">
+                    <h3>🔟</h3>
+                    <p>Ten</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="animals">
+            <h2>Let's Meet Animals! 🐾</h2>
+            <p style="color: #ff6b6b; font-size: 1.2em; font-weight: bold;">👆 Click any animal to learn more! 👆</p>
+            <div class="grid-container">
+                <div class="grid-item animal-card" onclick="openModal('cat')">
+                    <div class="animal-emoji">🐱</div>
+                    <p>Cat</p>
+                </div>
+                <div class="grid-item animal-card" onclick="openModal('dog')">
+                    <div class="animal-emoji">🐶</div>
+                    <p>Dog</p>
+                </div>
+                <div class="grid-item animal-card" onclick="openModal('elephant')">
+                    <div class="animal-emoji">🐘</div>
+                    <p>Elephant</p>
+                </div>
+                <div class="grid-item animal-card" onclick="openModal('lion')">
+                    <div class="animal-emoji">🦁</div>
+                    <p>Lion</p>
+                </div>
+                <div class="grid-item animal-card" onclick="openModal('monkey')">
+                    <div class="animal-emoji">🐵</div>
+                    <p>Monkey</p>
+                </div>
+                <div class="grid-item animal-card" onclick="openModal('rabbit')">
+                    <div class="animal-emoji">🐰</div>
+                    <p>Rabbit</p>
+                </div>
+                <div class="grid-item animal-card" onclick="openModal('bear')">
+                    <div class="animal-emoji">🐻</div>
+                    <p>Bear</p>
+                </div>
+                <div class="grid-item animal-card" onclick="openModal('frog')">
+                    <div class="animal-emoji">🐸</div>
+                    <p>Frog</p>
+                </div>
+                <div class="grid-item animal-card" onclick="openModal('kangaroo')">
+                    <div class="animal-emoji">🦘</div>
+                    <p>Kangaroo</p>
+                </div>
+                <div class="grid-item animal-card" onclick="openModal('wolf')">
+                    <div class="animal-emoji">🐺</div>
+                    <p>Wolf</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="fruits">
+            <h2>Let's Learn Fruits! 🍉</h2>
+            
+            <!-- Promotional Belt -->
+            <div class="promo-belt">
+                <h3>✨ Fresh & Delicious Fruits! ✨</h3>
+                <div class="promo-fruits">
+                    <span class="promo-fruit-item">🍎</span>
+                    <span class="promo-fruit-item">🍌</span>
+                    <span class="promo-fruit-item">🍊</span>
+                    <span class="promo-fruit-item">🍇</span>
+                    <span class="promo-fruit-item">🍓</span>
+                    <span class="promo-fruit-item">🍉</span>
+                    <span class="promo-fruit-item">🍍</span>
+                </div>
+            </div>
+            
+            <div class="grid-container">
+                <div class="grid-item fruit-card" data-fruit="Apple">
+                    <div class="fruit-emoji">🍎</div>
+                    <p>Apple</p>
+                </div>
+                <div class="grid-item fruit-card" data-fruit="Banana">
+                    <div class="fruit-emoji">🍌</div>
+                    <p>Banana</p>
+                </div>
+                <div class="grid-item fruit-card" data-fruit="Orange">
+                    <div class="fruit-emoji">🍊</div>
+                    <p>Orange</p>
+                </div>
+                <div class="grid-item fruit-card" data-fruit="Grapes">
+                    <div class="fruit-emoji">🍇</div>
+                    <p>Grapes</p>
+                </div>
+                <div class="grid-item fruit-card" data-fruit="Strawberry">
+                    <div class="fruit-emoji">🍓</div>
+                    <p>Strawberry</p>
+                </div>
+                <div class="grid-item fruit-card" data-fruit="Watermelon">
+                    <div class="fruit-emoji">🍉</div>
+                    <p>Watermelon</p>
+                </div>
+                <div class="grid-item fruit-card" data-fruit="Pineapple">
+                    <div class="fruit-emoji">🍍</div>
+                    <p>Pineapple</p>
+                </div>
+                <div class="grid-item fruit-card" data-fruit="Cherry">
+                    <div class="fruit-emoji">🍒</div>
+                    <p>Cherry</p>
+                </div>
+                <div class="grid-item fruit-card" data-fruit="Peach">
+                    <div class="fruit-emoji">🍑</div>
+                    <p>Peach</p>
+                </div>
+                <div class="grid-item fruit-card" data-fruit="Lemon">
+                    <div class="fruit-emoji">🍋</div>
+                    <p>Lemon</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>🌈 Keep Learning and Growing! 🌈</p>
+        <p>Made with ❤️ for Young Learners</p>
+        <p><a href="#" onclick="showSection('welcome')">Back to Home</a></p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
