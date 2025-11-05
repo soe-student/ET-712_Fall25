@@ -4,7 +4,10 @@ function showSection(id) {
     for (var i = 0; i < sections.length; i++) {
         sections[i].classList.remove('active');
     }
-    document.getElementById(id).classList.add('active');
+    var target = document.getElementById(id);
+    if (target) {
+        target.classList.add('active');
+    }
 }
 
 function display(word) {
@@ -72,56 +75,63 @@ function promptMath(number) {
 // ===== ANIMALS: MODAL WITH IMAGES CREATED IN JAVASCRIPT =====
 const animalData = {
     cat: {
-        emoji: '🐱',
         name: 'Cat',
-        image: 'images/cat.jpg'
+        image: 'images/cat.jpg',
+        emoji: ''
     },
     dog: {
-        emoji: '🐶',
         name: 'Dog',
-        image: 'images/dog.jpg'
+        image: 'images/dog.jpg',
+        emoji: ''
     },
     elephant: {
-        emoji: '🐘',
         name: 'Elephant',
-        image: 'images/elephant.jpg'
+        image: 'images/elephant.jpg',
+        emoji: ''
     },
     lion: {
-        emoji: '🦁',
         name: 'Lion',
-        image: 'images/lion.jpg'
+        image: 'images/lion.jpg',
+        emoji: ''
     },
     monkey: {
-        emoji: '🐵',
         name: 'Monkey',
-        image: 'images/monkey.jpg'
+        image: 'images/monkey.jpg',
+        emoji: ''
     },
     rabbit: {
-        emoji: '🐰',
         name: 'Rabbit',
-        image: 'images/rabbit.jpg'
+        image: 'images/rabbit.jpg',
+        emoji: ''
     },
     bear: {
-        emoji: '🐻',
         name: 'Bear',
-        image: 'images/bear.jpg'
+        image: 'images/bear.jpg',
+        emoji: ''
+    },
+    frog: {
+        name: 'Frog',
+        image: 'images/frog.jpg',
+        emoji: ''
     },
     kangaroo: {
-        emoji: '🦘',
         name: 'Kangaroo',
-        image: 'images/kangaroo.jpg'
+        image: 'images/kangaroo.jpg',
+        emoji: ''
     },
     wolf: {
-        emoji: '🐺',
         name: 'Wolf',
-        image: 'images/wolf.jpg'
+        image: 'images/wolf.jpg',
+        emoji: ''
     }
 };
-
 function openModal(animalName) {
     var animal = animalData[animalName];
+    if (!animal) {
+        console.warn('openModal: unknown animalName:', animalName);
+        return;
+    }
     
-    // Create modal elements dynamically
     var modal = document.createElement('div');
     modal.style.cssText = 'display: block; position: fixed; z-index: 1000; left: 0; top: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.6);';
     
@@ -132,16 +142,16 @@ function openModal(animalName) {
     closeBtn.innerHTML = '&times;';
     closeBtn.style.cssText = 'color: #ff6b6b; float: right; font-size: 35px; font-weight: bold; cursor: pointer; line-height: 20px;';
     closeBtn.onclick = function() {
-        document.body.removeChild(modal);
+        if (modal.parentNode) modal.parentNode.removeChild(modal);
     };
-    
+
     var emoji = document.createElement('div');
-    emoji.textContent = animal.emoji;
-    emoji.style.cssText = 'font-size: 5em; margin: 20px 0;';
+    emoji.textContent = '🐾';
+    emoji.style.cssText = 'font-size: 2rem; display: inline-block; margin-right: 10px; vertical-align: middle;';
     
     var title = document.createElement('h2');
     title.textContent = animal.name;
-    title.style.cssText = 'color: #ff6b6b; font-size: 2.5em; margin: 15px 0;';
+    title.style.cssText = 'color: #ff6b6b; font-size: 2.5em; margin: 15px 0; display: inline-block; vertical-align: middle;';
     
     var image = document.createElement('img');
     image.src = animal.image;
@@ -155,14 +165,8 @@ function openModal(animalName) {
     modal.appendChild(modalContent);
     document.body.appendChild(modal);
     
-    // Close when clicking outside
-    modal.onclick = function(event) {
-        if (event.target === modal) {
-            document.body.removeChild(modal);
-        }
-    };
 }
-
+    
 function closeModal() {
     var modals = document.querySelectorAll('[style*="position: fixed"]');
     modals.forEach(function(modal) {
@@ -196,22 +200,30 @@ function initSlideshow() {
 }
 
 function showSlides() {
-    // Remove active class from all slides
     for (var i = 0; i < slides.length; i++) {
         slides[i].classList.remove('active-slide');
     }
     
-    // Move to next slide
     slideIndex++;
     if (slideIndex > slides.length) {
-        slideIndex = 1;
+        slideIndex = 1;  // Reset to first slide
     }
-    
-    // Show current slide
     slides[slideIndex - 1].classList.add('active-slide');
-    
-    // Change slide every 3 seconds
     slideTimer = setTimeout(showSlides, 3000);
+}
+function updateScrollProgress() {
+    var scrollProgress = document.getElementById('scrollProgress');
+    if (!scrollProgress) return;
+    var scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+    var scrollHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+    if (scrollHeight <= 0) {
+        scrollProgress.style.width = '0%';
+        return;
+    }
+    var scrollPercent = (scrollTop / scrollHeight) * 100;
+    scrollPercent = Math.max(0, Math.min(100, scrollPercent));
+    
+    scrollProgress.style.width = scrollPercent + '%';
 }
 
 // ===== SCROLL PROGRESS BAR =====
