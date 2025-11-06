@@ -1,10 +1,13 @@
-// Original Functions
+
 function showSection(id) {
     var sections = document.querySelectorAll('section');
     for (var i = 0; i < sections.length; i++) {
         sections[i].classList.remove('active');
     }
-    document.getElementById(id).classList.add('active');
+    var target = document.getElementById(id);
+    if (target) {
+        target.classList.add('active');
+    }
 }
 
 function display(word) {
@@ -15,21 +18,15 @@ function speak(word) {
     alert('You clicked ' + word + '! 🎉');
 }
 
-// ===== COLORS: SIMPLE ROUND TOGGLE =====
 function toggleRound(element, colorName) {
-    // Toggle round shape
-    element.classList.toggle('round');
-    
-    // Show alert
-    alert('You clicked ' + colorName + '! 🎉');
+    element.classList.toggle('round');  
 }
 
-// ===== NUMBERS: INTERACTIVE MATH =====
 function promptMath(number) {
     var operation = prompt('You clicked ' + number + '! 🎉\n\nWould you like to ADD or SUBTRACT?\nType "add" or "subtract"');
     
     if (operation === null) {
-        return; // User canceled
+        return; 
     }
     
     operation = operation.toLowerCase().trim();
@@ -38,7 +35,7 @@ function promptMath(number) {
         var secondNumber = prompt('Great! Now enter another number (0-10):');
         
         if (secondNumber === null) {
-            return; // User canceled
+            return; 
         }
         
         secondNumber = parseInt(secondNumber);
@@ -69,59 +66,65 @@ function promptMath(number) {
     }
 }
 
-// ===== ANIMALS: MODAL WITH IMAGES CREATED IN JAVASCRIPT =====
 const animalData = {
     cat: {
-        emoji: '🐱',
         name: 'Cat',
-        image: 'images/cat.jpg'
+        image: 'images/cat.jpg',
+        emoji: ''
     },
     dog: {
-        emoji: '🐶',
         name: 'Dog',
-        image: 'images/dog.jpg'
+        image: 'images/dog.jpg',
+        emoji: ''
     },
     elephant: {
-        emoji: '🐘',
         name: 'Elephant',
-        image: 'images/elephant.jpg'
+        image: 'images/elephant.jpg',
+        emoji: ''
     },
     lion: {
-        emoji: '🦁',
         name: 'Lion',
-        image: 'images/lion.jpg'
+        image: 'images/lion.jpg',
+        emoji: ''
     },
     monkey: {
-        emoji: '🐵',
         name: 'Monkey',
-        image: 'images/monkey.jpg'
+        image: 'images/monkey.jpg',
+        emoji: ''
     },
     rabbit: {
-        emoji: '🐰',
         name: 'Rabbit',
-        image: 'images/rabbit.jpg'
+        image: 'images/rabbit.jpg',
+        emoji: ''
     },
     bear: {
-        emoji: '🐻',
         name: 'Bear',
-        image: 'images/bear.jpg'
+        image: 'images/bear.jpg',
+        emoji: ''
+    },
+    frog: {
+        name: 'Frog',
+        image: 'images/frog.jpg',
+        emoji: ''
     },
     kangaroo: {
-        emoji: '🦘',
         name: 'Kangaroo',
-        image: 'images/kangaroo.jpg'
+        image: 'images/kangaroo.jpg',
+        emoji: ''
     },
     wolf: {
-        emoji: '🐺',
         name: 'Wolf',
-        image: 'images/wolf.jpg'
+        image: 'images/wolf.jpg',
+        emoji: ''
     }
 };
-
 function openModal(animalName) {
     var animal = animalData[animalName];
+    if (!animal) {
+        console.warn('openModal: unknown animalName:', animalName);
+        return;
+    }
     
-    // Create modal elements dynamically
     var modal = document.createElement('div');
     modal.style.cssText = 'display: block; position: fixed; z-index: 1000; left: 0; top: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.6);';
     
@@ -132,16 +135,16 @@ function openModal(animalName) {
     closeBtn.innerHTML = '&times;';
     closeBtn.style.cssText = 'color: #ff6b6b; float: right; font-size: 35px; font-weight: bold; cursor: pointer; line-height: 20px;';
     closeBtn.onclick = function() {
-        document.body.removeChild(modal);
+        if (modal.parentNode) modal.parentNode.removeChild(modal);
     };
-    
+
     var emoji = document.createElement('div');
-    emoji.textContent = animal.emoji;
-    emoji.style.cssText = 'font-size: 5em; margin: 20px 0;';
+    emoji.textContent = '🐾';
+    emoji.style.cssText = 'font-size: 2rem; display: inline-block; margin-right: 10px; vertical-align: middle;';
     
     var title = document.createElement('h2');
     title.textContent = animal.name;
-    title.style.cssText = 'color: #ff6b6b; font-size: 2.5em; margin: 15px 0;';
+    title.style.cssText = 'color: #ff6b6b; font-size: 2.5em; margin: 15px 0; display: inline-block; vertical-align: middle;';
     
     var image = document.createElement('img');
     image.src = animal.image;
@@ -155,14 +158,8 @@ function openModal(animalName) {
     modal.appendChild(modalContent);
     document.body.appendChild(modal);
     
-    // Close when clicking outside
-    modal.onclick = function(event) {
-        if (event.target === modal) {
-            document.body.removeChild(modal);
-        }
-    };
 }
-
+    
 function closeModal() {
     var modals = document.querySelectorAll('[style*="position: fixed"]');
     modals.forEach(function(modal) {
@@ -177,8 +174,12 @@ function initFruitListeners() {
     var fruitCards = document.querySelectorAll('.fruit-card');
     fruitCards.forEach(function(card) {
         card.addEventListener('click', function() {
-            var fruitName = this.getAttribute('data-fruit');
-            alert('You clicked ' + fruitName + '! 🎉');
+            card.style.transition = 'transform 0.2s';
+            card.style.transform = 'scale(2.5)';
+            setTimeout(function() {
+                card.style.transform = 'scale(1)';
+            }, 300);
+            
         });
     });
 }
@@ -196,32 +197,16 @@ function initSlideshow() {
 }
 
 function showSlides() {
-    // Remove active class from all slides
     for (var i = 0; i < slides.length; i++) {
         slides[i].classList.remove('active-slide');
     }
     
-    // Move to next slide
     slideIndex++;
     if (slideIndex > slides.length) {
-        slideIndex = 1;
+        slideIndex = 1;  
     }
-    
-    // Show current slide
     slides[slideIndex - 1].classList.add('active-slide');
-    
-    // Change slide every 3 seconds
     slideTimer = setTimeout(showSlides, 3000);
-}
-
-// ===== SCROLL PROGRESS BAR =====
-function updateScrollProgress() {
-    var scrollProgress = document.getElementById('scrollProgress');
-    var scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
-    var scrollHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-    var scrollPercent = (scrollTop / scrollHeight) * 100;
-    
-    scrollProgress.style.width = scrollPercent + '%';
 }
 
 // ===== MATH FORM - ADDITION AND SUBTRACTION =====
@@ -254,7 +239,6 @@ window.addEventListener('load', function() {
     initFruitListeners();
 });
 
-window.addEventListener('scroll', updateScrollProgress);
 
 document.addEventListener('DOMContentLoaded', function() {
     var mathForm = document.getElementById('mathForm');
@@ -264,6 +248,5 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
     
-    // Initialize fruit listeners
     initFruitListeners();
 });
