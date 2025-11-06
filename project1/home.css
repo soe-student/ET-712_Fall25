@@ -64,25 +64,20 @@ main {
 
 section {
     display: none;
-    animation: fadeIn 0.6s ease;
 }
 
 section.active {
     display: block;
 }
 
-@keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
-}
-
 .grid-container {
     display: grid;
-    grid-template-columns: repeat(5, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
     gap: 15px;
     padding: 10px;
     max-width: 900px;
     margin: 0 auto;
+    grid-auto-rows: 140px;
 }
 
 .grid-item {
@@ -92,6 +87,10 @@ section.active {
     cursor: pointer;
     box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
     transition: transform 0.2s, box-shadow 0.2s, border-radius 0.3s;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
 .grid-item:hover {
@@ -142,6 +141,7 @@ footer a:hover {
 
 .slideshow-container {
     position: relative;
+    width: 90%;
     max-width: 600px;
     margin: 20px auto;
     background: white;
@@ -157,18 +157,6 @@ footer a:hover {
 
 .slide.active-slide {
     display: block;
-    animation: slideIn 0.5s ease;
-}
-
-@keyframes slideIn {
-    from { 
-        opacity: 0; 
-        transform: translateX(20px); 
-    }
-    to { 
-        opacity: 1; 
-        transform: translateX(0); 
-    }
 }
 
 .slide h3 {
@@ -180,25 +168,6 @@ footer a:hover {
 .slide-emoji {
     font-size: 4em;
     margin: 20px 0;
-}
-
-.scroll-indicator {
-    text-align: center;
-    padding: 20px;
-    font-size: 1.2em;
-    color: #666;
-    font-weight: bold;
-}
-
-.scroll-progress {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 0%;
-    height: 8px;
-    background: linear-gradient(to right, #ff6b6b, #4ecdc4, #ffe66d);
-    z-index: 999;
-    transition: width 0.1s ease;
 }
 
 .math-container {
@@ -226,7 +195,7 @@ footer a:hover {
     margin: 5px;
     border: 3px solid #ffcad4;
     border-radius: 15px;
-    width: 80px;
+    width: min(80px, 18%);
     text-align: center;
     font-family: "Comic Sans MS", "Poppins", sans-serif;
 }
@@ -271,113 +240,4 @@ footer a:hover {
     justify-content: center;
     font-weight: bold;
     color: #333;
-}
-
-.promo-belt {
-    background: linear-gradient(90deg, #ff6b6b, #ffd166, #06ffa5, #4ecdc4, #ff6b6b);
-    background-size: 200% 100%;
-    padding: 15px;
-    margin: 20px auto;
-    border-radius: 15px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-    animation: moveBelt 8s linear infinite;
-    max-width: 900px;
-    overflow: hidden;
-}
-
-@keyframes moveBelt {
-    0% {
-        background-position: 0% 0%;
-    }
-    100% {
-        background-position: 200% 0%;
-    }
-}
-
-.promo-belt h3 {
-    color: white;
-    font-size: 1.8em;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-    margin: 0;
-}
-
-.promo-fruits {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 18px;
-    margin: 12px auto 0;
-    padding: 8px 12px;
-    max-width: 800px;
-    flex-wrap: wrap;
-    border-radius: 12px;
-    background: rgba(255, 255, 255, 0.06);
-}
-
-.promo-fruit-item {
-    font-size: 2.6em;
-    line-height: 1;
-    filter: drop-shadow(0 3px 6px rgba(0, 0, 0, 0.12));
-    transition: transform 160ms ease, opacity 160ms ease;
-    cursor: default;
-}
-
-.promo-fruit-item:hover,
-.promo-fruit-item:focus {
-    transform: translateY(-8px) scale(1.03);
-}
-
-@media (prefers-reduced-motion: reduce) {
-    .promo-fruit-item,
-    .promo-fruits {
-        transition: none;
-    }
-    .promo-fruit-item:hover,
-    .promo-fruit-item:focus {
-        transform: none;
-    }
-}
-
-@media (max-width: 900px) {
-    .grid-container {
-        grid-template-columns: repeat(3, 1fr);
-    }
-}
-
-@media (max-width: 600px) {
-    .grid-container {
-        grid-template-columns: repeat(2, 1fr);
-    }
-    
-    .slideshow-container {
-        padding: 20px 10px;
-    }
-    
-    .slide h3 {
-        font-size: 1.5em;
-    }
-    
-    .slide-emoji {
-        font-size: 3em;
-    }
-    
-    .modal-content {
-        width: 90%;
-        padding: 20px;
-        margin: 20% auto;
-    }
-    
-    .math-form input {
-        width: 60px;
-        font-size: 1.2em;
-    }
-    
-    .math-form button {
-        font-size: 1.1em;
-        padding: 10px 20px;
-    }
-    
-    .promo-fruit-item {
-        font-size: 2em;
-    }
 }

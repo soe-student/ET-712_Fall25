@@ -1,4 +1,4 @@
-// Original Functions
+
 function showSection(id) {
     var sections = document.querySelectorAll('section');
     for (var i = 0; i < sections.length; i++) {
@@ -18,21 +18,15 @@ function speak(word) {
     alert('You clicked ' + word + '! 🎉');
 }
 
-// ===== COLORS: SIMPLE ROUND TOGGLE =====
 function toggleRound(element, colorName) {
-    // Toggle round shape
-    element.classList.toggle('round');
-    
-    // Show alert
-    alert('You clicked ' + colorName + '! 🎉');
+    element.classList.toggle('round');  
 }
 
-// ===== NUMBERS: INTERACTIVE MATH =====
 function promptMath(number) {
     var operation = prompt('You clicked ' + number + '! 🎉\n\nWould you like to ADD or SUBTRACT?\nType "add" or "subtract"');
     
     if (operation === null) {
-        return; // User canceled
+        return; 
     }
     
     operation = operation.toLowerCase().trim();
@@ -41,7 +35,7 @@ function promptMath(number) {
         var secondNumber = prompt('Great! Now enter another number (0-10):');
         
         if (secondNumber === null) {
-            return; // User canceled
+            return; 
         }
         
         secondNumber = parseInt(secondNumber);
@@ -72,7 +66,6 @@ function promptMath(number) {
     }
 }
 
-// ===== ANIMALS: MODAL WITH IMAGES CREATED IN JAVASCRIPT =====
 const animalData = {
     cat: {
         name: 'Cat',
@@ -181,8 +174,12 @@ function initFruitListeners() {
     var fruitCards = document.querySelectorAll('.fruit-card');
     fruitCards.forEach(function(card) {
         card.addEventListener('click', function() {
-            var fruitName = this.getAttribute('data-fruit');
-            alert('You clicked ' + fruitName + '! 🎉');
+            card.style.transition = 'transform 0.2s';
+            card.style.transform = 'scale(2.5)';
+            setTimeout(function() {
+                card.style.transform = 'scale(1)';
+            }, 300);
+            
         });
     });
 }
@@ -206,34 +203,10 @@ function showSlides() {
     
     slideIndex++;
     if (slideIndex > slides.length) {
-        slideIndex = 1;  // Reset to first slide
+        slideIndex = 1;  
     }
     slides[slideIndex - 1].classList.add('active-slide');
     slideTimer = setTimeout(showSlides, 3000);
-}
-function updateScrollProgress() {
-    var scrollProgress = document.getElementById('scrollProgress');
-    if (!scrollProgress) return;
-    var scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
-    var scrollHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-    if (scrollHeight <= 0) {
-        scrollProgress.style.width = '0%';
-        return;
-    }
-    var scrollPercent = (scrollTop / scrollHeight) * 100;
-    scrollPercent = Math.max(0, Math.min(100, scrollPercent));
-    
-    scrollProgress.style.width = scrollPercent + '%';
-}
-
-// ===== SCROLL PROGRESS BAR =====
-function updateScrollProgress() {
-    var scrollProgress = document.getElementById('scrollProgress');
-    var scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
-    var scrollHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-    var scrollPercent = (scrollTop / scrollHeight) * 100;
-    
-    scrollProgress.style.width = scrollPercent + '%';
 }
 
 // ===== MATH FORM - ADDITION AND SUBTRACTION =====
@@ -266,7 +239,6 @@ window.addEventListener('load', function() {
     initFruitListeners();
 });
 
-window.addEventListener('scroll', updateScrollProgress);
 
 document.addEventListener('DOMContentLoaded', function() {
     var mathForm = document.getElementById('mathForm');
@@ -276,6 +248,5 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
     
-    // Initialize fruit listeners
     initFruitListeners();
 });
