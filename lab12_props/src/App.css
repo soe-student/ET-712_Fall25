@@ -1,0 +1,38 @@
+*{box-sizing: border-box;}
+img{width: 100%;display: block;}
+
+.date{
+  display: flex;
+  justify-content: center;
+  color: blue;
+  font-style: italic;
+}
+.container{
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+/*user feedback card*/
+.feedbackcard{
+  border: 2px solid black;
+  border-radius: 10px;
+  padding: 10px;
+  margin: 10px;
+  width: 250px;
+} 
+.cardfooter{
+  background-color: #f1f1f1;
+  padding: 10px;
+  text-align: center;
+  font-size: 12px;
+  color: grey;
+}
+.feedbackcontainer{
+  margin: 1rem;
+}
+.feedbackcontainer:hover{
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  transform: scale(1.05);
+  overflow: hidden;
+  border-radius: 10px;
+}
