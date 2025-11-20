@@ -1,6 +1,8 @@
 import './App.css';
 import User from './comments';
 import Userfeedback from './Userfeedback';
+
+
 // import images
 import user1 from './images/male.png';
 import user2 from './images/girl.png';
@@ -24,6 +26,7 @@ function App() {
           <User image={user3} username="Boy" date="11/6/2025" msg="I am a boy" />
         </Userfeedback>
       </section>
+      
     </>
   );
 }
