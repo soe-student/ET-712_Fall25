@@ -5,6 +5,9 @@ import Cart from './components/cart';
 
 function App() {
   const [cart, setCart] = useState([]);
+  const removeFromCart = (id) => {
+    setCart(cart.filter((item) => item.id !== id));
+  }
 
   const addToCart = (product) => {
     const existingItem = cart.find((item) => item.id === product.id);
@@ -25,8 +28,7 @@ function App() {
       <h1 className='apptitle'>Welcome to Soe Kaythi's supermarket</h1> 
     
       <ProductList addToCart = {addToCart} />
-      <Cart cart = {cart} />
-    
+      <Cart cart={cart} removeFromCart={removeFromCart} />
     </div>
   );
 }
