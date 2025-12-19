@@ -1,0 +1,678 @@
+/* ============================================
+   ALBUM PAGE STYLES - Fully Responsive
+   4 Albums per row on Desktop
+   ============================================ */
+
+/* Page Container */
+.albums-page {
+    padding: 3rem 0;
+    background-color: #f7f7f7;
+    min-height: calc(100vh - 80px);
+}
+
+/* Page Header */
+.albums-header {
+    text-align: center;
+    margin-bottom: 2.5rem;
+}
+
+.albums-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #1a1a1a;
+    margin: 0 0 0.5rem 0;
+}
+
+.albums-subtitle {
+    font-size: 1rem;
+    color: #666666;
+    margin: 0;
+}
+
+/* Albums Container - Centered with consistent margins */
+.albums-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+/* Add wrapper for consistent page layout */
+.albums-page .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+/* Genre Section */
+.genre-section {
+    margin-bottom: 3rem;
+}
+
+/* Genre Header */
+.genre-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.25rem;
+}
+
+.genre-title {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: #1a1a1a;
+    margin: 0;
+}
+
+/* Scroll Buttons */
+.scroll-buttons {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.scroll-btn {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background-color: #e5e5e5;
+    color: #333333;
+    border: none;
+    font-size: 1.3rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease;
+}
+
+.scroll-btn:hover {
+    background-color: #d0d0d0;
+    transform: scale(1.05);
+}
+
+/* Albums Row - Horizontal Scroll */
+.albums-row {
+    display: flex;
+    gap: 1.5rem;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    padding: 0.5rem 0;
+    
+    /* Hide scrollbar but keep functionality */
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+.albums-row::-webkit-scrollbar {
+    display: none;
+}
+
+/* Album Card - 4 per row on Desktop */
+.album-card-horizontal {
+    /* Calculate width for exactly 4 cards: (100% - 3 gaps of 1.5rem) / 4 */
+    flex: 0 0 calc((100% - 4.5rem) / 4);
+    min-width: 200px;
+    max-width: 280px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.album-card-horizontal:hover {
+    transform: translateY(-6px);
+}
+
+.album-card-horizontal:hover img {
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+}
+
+.album-card-horizontal img {
+    width: 100%;
+    aspect-ratio: 1;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 1rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+/* Album Card Info */
+.album-card-info {
+    display: flex;
+    flex-direction: column;
+    gap: 0.15rem;
+}
+
+.album-card-info h4 {
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: #1a1a1a;
+    margin: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.album-card-info .artist {
+    font-size: 0.9rem;
+    color: #666666;
+    margin: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.album-card-info .year {
+    font-size: 0.85rem;
+    color: #888888;
+    margin: 0.25rem 0 0 0;
+}
+
+/* ============================================
+   LARGE DESKTOP (1400px+)
+   4 albums visible, larger cards
+   ============================================ */
+@media (min-width: 1400px) {
+    .albums-container {
+        max-width: 1200px;
+        padding: 0 2rem;
+    }
+
+    .albums-row {
+        gap: 1.5rem;
+    }
+
+    .album-card-horizontal {
+        flex: 0 0 calc((100% - 4.5rem) / 4);
+        min-width: 200px;
+        max-width: 280px;
+    }
+
+    .album-card-info h4 {
+        font-size: 1.1rem;
+    }
+
+    .album-card-info .artist {
+        font-size: 0.9rem;
+    }
+
+    .genre-title {
+        font-size: 1.4rem;
+    }
+
+    .scroll-btn {
+        width: 36px;
+        height: 36px;
+        font-size: 1.3rem;
+    }
+}
+
+/* ============================================
+   DESKTOP (1024px - 1399px)
+   4 albums visible
+   ============================================ */
+@media (max-width: 1399px) and (min-width: 1024px) {
+    .albums-container {
+        padding: 0 2rem;
+    }
+
+    .albums-row {
+        gap: 1.5rem;
+    }
+
+    .album-card-horizontal {
+        flex: 0 0 calc((100% - 4.5rem) / 4);
+        min-width: 180px;
+        max-width: 260px;
+    }
+}
+
+/* ============================================
+   iPAD PRO / LARGE TABLET (834px - 1023px)
+   3 albums visible
+   ============================================ */
+@media (max-width: 1023px) and (min-width: 834px) {
+    .albums-page {
+        padding: 2.5rem 0;
+    }
+
+    .albums-header {
+        margin-bottom: 2rem;
+    }
+
+    .albums-title {
+        font-size: 2.25rem;
+    }
+
+    .albums-container {
+        padding: 0 1.75rem;
+    }
+
+    .genre-section {
+        margin-bottom: 2.5rem;
+    }
+
+    .genre-title {
+        font-size: 1.3rem;
+    }
+
+    .albums-row {
+        gap: 1.25rem;
+    }
+
+    /* 3 albums per row */
+    .album-card-horizontal {
+        flex: 0 0 calc((100% - 2.5rem) / 3);
+        min-width: 180px;
+        max-width: 240px;
+    }
+
+    .album-card-info h4 {
+        font-size: 1rem;
+    }
+
+    .album-card-info .artist {
+        font-size: 0.85rem;
+    }
+
+    .scroll-btn {
+        width: 34px;
+        height: 34px;
+        font-size: 1.2rem;
+    }
+}
+
+/* ============================================
+   iPAD / TABLET (768px - 833px)
+   3 albums visible
+   ============================================ */
+@media (max-width: 833px) and (min-width: 768px) {
+    .albums-page {
+        padding: 2rem 0;
+    }
+
+    .albums-header {
+        margin-bottom: 1.75rem;
+    }
+
+    .albums-title {
+        font-size: 2rem;
+    }
+
+    .albums-subtitle {
+        font-size: 0.95rem;
+    }
+
+    .albums-container {
+        padding: 0 1.5rem;
+    }
+
+    .genre-section {
+        margin-bottom: 2.25rem;
+    }
+
+    .genre-title {
+        font-size: 1.25rem;
+    }
+
+    .albums-row {
+        gap: 1.25rem;
+    }
+
+    /* 3 albums per row */
+    .album-card-horizontal {
+        flex: 0 0 calc((100% - 2.5rem) / 3);
+        min-width: 160px;
+        max-width: 220px;
+    }
+
+    .album-card-horizontal img {
+        border-radius: 8px;
+        margin-bottom: 0.875rem;
+    }
+
+    .album-card-info h4 {
+        font-size: 0.95rem;
+    }
+
+    .album-card-info .artist {
+        font-size: 0.85rem;
+    }
+
+    .album-card-info .year {
+        font-size: 0.8rem;
+    }
+
+    .scroll-btn {
+        width: 32px;
+        height: 32px;
+        font-size: 1.1rem;
+    }
+}
+
+/* ============================================
+   iPAD MINI / SMALL TABLET (600px - 767px)
+   2-3 albums visible
+   ============================================ */
+@media (max-width: 767px) and (min-width: 600px) {
+    .albums-page {
+        padding: 1.75rem 0;
+    }
+
+    .albums-header {
+        margin-bottom: 1.5rem;
+    }
+
+    .albums-title {
+        font-size: 1.85rem;
+    }
+
+    .albums-subtitle {
+        font-size: 0.9rem;
+    }
+
+    .albums-container {
+        padding: 0 1.25rem;
+    }
+
+    .genre-section {
+        margin-bottom: 2rem;
+    }
+
+    .genre-title {
+        font-size: 1.2rem;
+    }
+
+    .albums-row {
+        gap: 1rem;
+    }
+
+    /* 2-3 albums visible */
+    .album-card-horizontal {
+        flex: 0 0 calc((100% - 2rem) / 2.5);
+        min-width: 150px;
+        max-width: 200px;
+    }
+
+    .album-card-horizontal img {
+        border-radius: 8px;
+        margin-bottom: 0.75rem;
+    }
+
+    .album-card-info h4 {
+        font-size: 0.9rem;
+    }
+
+    .album-card-info .artist {
+        font-size: 0.8rem;
+    }
+
+    .album-card-info .year {
+        font-size: 0.75rem;
+    }
+
+    .scroll-btn {
+        width: 30px;
+        height: 30px;
+        font-size: 1rem;
+    }
+}
+
+/* ============================================
+   LARGE MOBILE (480px - 599px)
+   2 albums visible
+   ============================================ */
+@media (max-width: 599px) and (min-width: 480px) {
+    .albums-page {
+        padding: 1.5rem 0;
+    }
+
+    .albums-header {
+        margin-bottom: 1.25rem;
+    }
+
+    .albums-title {
+        font-size: 1.65rem;
+    }
+
+    .albums-subtitle {
+        font-size: 0.85rem;
+    }
+
+    .albums-container {
+        padding: 0 1rem;
+    }
+
+    .genre-section {
+        margin-bottom: 1.75rem;
+    }
+
+    .genre-header {
+        margin-bottom: 1rem;
+    }
+
+    .genre-title {
+        font-size: 1.15rem;
+    }
+
+    .albums-row {
+        gap: 1rem;
+        padding: 0.25rem 0;
+    }
+
+    /* 2 albums visible */
+    .album-card-horizontal {
+        flex: 0 0 calc((100% - 1rem) / 2);
+        min-width: 140px;
+        max-width: 180px;
+    }
+
+    .album-card-horizontal img {
+        border-radius: 8px;
+        margin-bottom: 0.65rem;
+    }
+
+    .album-card-horizontal:hover {
+        transform: translateY(-4px);
+    }
+
+    .album-card-info h4 {
+        font-size: 0.875rem;
+    }
+
+    .album-card-info .artist {
+        font-size: 0.8rem;
+    }
+
+    .album-card-info .year {
+        font-size: 0.75rem;
+    }
+
+    /* Hide scroll buttons on mobile - use swipe */
+    .scroll-buttons {
+        display: none;
+    }
+}
+
+/* ============================================
+   MOBILE (320px - 479px)
+   2 albums visible
+   ============================================ */
+@media (max-width: 479px) {
+    .albums-page {
+        padding: 1.25rem 0;
+    }
+
+    .albums-header {
+        margin-bottom: 1rem;
+    }
+
+    .albums-title {
+        font-size: 1.5rem;
+    }
+
+    .albums-subtitle {
+        font-size: 0.8rem;
+    }
+
+    .albums-container {
+        padding: 0 0.875rem;
+    }
+
+    .genre-section {
+        margin-bottom: 1.5rem;
+    }
+
+    .genre-header {
+        margin-bottom: 0.875rem;
+    }
+
+    .genre-title {
+        font-size: 1.1rem;
+    }
+
+    .albums-row {
+        gap: 0.875rem;
+        padding: 0.25rem 0;
+    }
+
+    /* 2 albums visible */
+    .album-card-horizontal {
+        flex: 0 0 calc((100% - 0.875rem) / 2);
+        min-width: 130px;
+        max-width: 160px;
+    }
+
+    .album-card-horizontal img {
+        border-radius: 6px;
+        margin-bottom: 0.5rem;
+    }
+
+    .album-card-horizontal:hover {
+        transform: translateY(-3px);
+    }
+
+    .album-card-info {
+        gap: 0.1rem;
+    }
+
+    .album-card-info h4 {
+        font-size: 0.85rem;
+    }
+
+    .album-card-info .artist {
+        font-size: 0.75rem;
+    }
+
+    .album-card-info .year {
+        font-size: 0.7rem;
+        margin-top: 0.15rem;
+    }
+
+    /* Hide scroll buttons - use swipe */
+    .scroll-buttons {
+        display: none;
+    }
+}
+
+/* ============================================
+   SMALL MOBILE (under 320px)
+   2 albums visible, smaller
+   ============================================ */
+@media (max-width: 319px) {
+    .albums-page {
+        padding: 1rem 0;
+    }
+
+    .albums-title {
+        font-size: 1.3rem;
+    }
+
+    .albums-subtitle {
+        font-size: 0.75rem;
+    }
+
+    .albums-container {
+        padding: 0 0.75rem;
+    }
+
+    .genre-section {
+        margin-bottom: 1.25rem;
+    }
+
+    .genre-title {
+        font-size: 1rem;
+    }
+
+    .albums-row {
+        gap: 0.75rem;
+    }
+
+    .album-card-horizontal {
+        flex: 0 0 calc((100% - 0.75rem) / 2);
+        min-width: 110px;
+        max-width: 140px;
+    }
+
+    .album-card-horizontal img {
+        border-radius: 6px;
+        margin-bottom: 0.4rem;
+    }
+
+    .album-card-info h4 {
+        font-size: 0.8rem;
+    }
+
+    .album-card-info .artist {
+        font-size: 0.7rem;
+    }
+
+    .album-card-info .year {
+        font-size: 0.65rem;
+    }
+}
+
+/* ============================================
+   LANDSCAPE ORIENTATION ADJUSTMENTS
+   ============================================ */
+@media (max-height: 500px) and (orientation: landscape) {
+    .albums-page {
+        padding: 1rem 0;
+    }
+
+    .albums-header {
+        margin-bottom: 1rem;
+    }
+
+    .albums-title {
+        font-size: 1.5rem;
+    }
+
+    .genre-section {
+        margin-bottom: 1.5rem;
+    }
+
+    .album-card-horizontal {
+        min-width: 120px;
+        max-width: 150px;
+    }
+}
+
+/* ============================================
+   TOUCH DEVICE OPTIMIZATIONS
+   ============================================ */
+@media (hover: none) and (pointer: coarse) {
+    .album-card-horizontal:hover {
+        transform: none;
+    }
+
+    .album-card-horizontal:active {
+        transform: scale(0.98);
+    }
+
+    .album-card-horizontal:hover img {
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+
+    .scroll-btn:hover {
+        transform: none;
+    }
+}
