@@ -1,0 +1,7 @@
+*{box-sizing: border-box;}
+body{padding: 2rem;}
+img{width: 100%; display: block;}
+.title{text-align: center; color: blueviolet;}
+.author{text-align: right; font-style:italic}
+#userEmail{padding: 0.5rem; width: 100%; max-width: 300px; margin-top: 0.5rem;}
+.img-container{width: 1000px; margin: 2rem auto;}
